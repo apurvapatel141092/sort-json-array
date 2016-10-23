@@ -1,0 +1,23 @@
+{
+  "name": "sort-json-array",
+  "version": "0.1.0",
+  "description": "Sort an array of JSON objects by a property",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apurvapatel141092/sort-json-array"
+  },
+  "bugs": {
+    "url": "https://github.com/apurvapatel141092/sort-json-array/issues"
+  },
+  "main": "index.js",
+  "author": "Apurva Patel",
+  "keywords": [
+    "array",
+    "property",
+    "attribute",
+    "sort",
+    "sorted",
+    "sorting",
+    "json"
+  ]
+}
