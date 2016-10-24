@@ -1,7 +1,8 @@
 {
   "name": "sort-json-array",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Sort an array of JSON objects by a property",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/apurvapatel141092/sort-json-array"
