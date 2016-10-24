@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sort-json-array by apurvapatel141092</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Sort-json-array</h1>
+      <h2 class="project-tagline">Sort an array of JSON objects by a property - npm package </h2>
+      <a href="https://github.com/apurvapatel141092/sort-json-array" class="btn">View on GitHub</a>
+      <a href="https://github.com/apurvapatel141092/sort-json-array/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/apurvapatel141092/sort-json-array/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="sort-json-array-" class="anchor" href="#sort-json-array-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>sort-json-array <a href="https://www.npmjs.com/package/sort-json-array"><img src="https://img.shields.io/npm/v/sort-json-array.svg?style=flat" alt="NPM version"></a>
+</h1>
+
+<blockquote>
+<p>Sort an array of JSON objects by a property</p>
+</blockquote>
+
+<p><a href="https://www.npmjs.com/package/sort-json-array/"><img src="https://nodei.co/npm/sort-json-array.svg?downloads=true&amp;stars=true" alt="NPM"></a></p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+
+<p>Install with <a href="https://www.npmjs.com/">npm</a>:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ npm install sort-json-array --save</pre></div>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Sort an array of JSON objects by a property:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> sortJsonArray <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>sort-json-array<span class="pl-pds">'</span></span>);
+
+<span class="pl-en">sortJsonArray</span>([{name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>c<span class="pl-pds">'</span></span>}, {name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span>}, {name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>b<span class="pl-pds">'</span></span>}], <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>);
+<span class="pl-c">//=&gt; [{name: 'a'}, {name: 'b'}, {name: 'c'}]</span>
+
+<span class="pl-en">sortJsonArray</span>([{name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>c<span class="pl-pds">'</span></span>}, {name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span>}, {name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>b<span class="pl-pds">'</span></span>}], <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>des<span class="pl-pds">'</span></span>);
+<span class="pl-c">//=&gt; [{name: 'c'}, {name: 'b'}, {name: 'a'}]</span>
+
+<span class="pl-en">sortJsonArray</span>([{name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>c<span class="pl-pds">'</span></span>}, {name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span>}, {name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>b<span class="pl-pds">'</span></span>}], <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>asc<span class="pl-pds">'</span></span>);
+<span class="pl-c">//=&gt; [{name: 'a'}, {name: 'b'}, {name: 'c'}]</span></pre></div>
+
+<h2>
+<a id="params" class="anchor" href="#params" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Params</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">sortJsonArray</span>(array, property, order);</pre></div>
+
+<ul>
+<li>
+<code>array</code>: <strong>{Array}</strong> The array to be sorted.</li>
+<li>
+<code>property</code>: <strong>{String}</strong>: The Property based on what the array should be sorted.</li>
+<li>
+<code>order</code>: <strong>{String}</strong>: Pass 'des' if you want array to be sorted in descending order. Pass 'asc' if you want array to be sorted in ascending order. By default it will be sorted in ascending order.</li>
+</ul>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> sortJsonArray <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>sort-json-array<span class="pl-pds">'</span></span>);
+
+<span class="pl-k">var</span> user <span class="pl-k">=</span> [
+  { name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>c<span class="pl-pds">'</span></span>, location<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>San Jose<span class="pl-pds">"</span></span> },
+  { name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>a<span class="pl-pds">'</span></span>, location<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>San Francisco<span class="pl-pds">"</span></span>},
+  { name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>b<span class="pl-pds">'</span></span>, location<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>New York<span class="pl-pds">"</span></span> },
+];
+
+<span class="pl-c">// sort by `name` in ascending order because order is not passed</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">sortJsonArray</span>(user, <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>));
+
+<span class="pl-c">// sort by `location` in descending order</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">sortJsonArray</span>(user, <span class="pl-s"><span class="pl-pds">'</span>location<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>des<span class="pl-pds">'</span></span>));
+
+<span class="pl-c">// sort by `name` in ascending order</span>
+<span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-en">sortJsonArray</span>(user, <span class="pl-s"><span class="pl-pds">'</span>name<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>asc<span class="pl-pds">'</span></span>));</pre></div>
+
+<h2>
+<a id="running-tests" class="anchor" href="#running-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running tests</h2>
+
+<p>Install dev dependencies and run test:</p>
+
+<div class="highlight highlight-source-shell"><pre>$ npm install -d <span class="pl-k">&amp;&amp;</span> npm <span class="pl-c1">test</span></pre></div>
+
+<h2>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h2>
+
+<p><strong>Apurva Patel</strong></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright © 2016, <a href="https://github.com/apurvapatel141092">Apurva Patel</a>.
+Released under the <a href="https://github.com/apurvapatel141092/sort-json-array/blob/master/LICENSE">MIT license</a>.</p>
+
+<hr>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/apurvapatel141092/sort-json-array">Sort-json-array</a> is maintained by <a href="https://github.com/apurvapatel141092">apurvapatel141092</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
