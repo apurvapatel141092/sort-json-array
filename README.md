@@ -1,4 +1,4 @@
-# sort-json-array
+# sort-json-array [![NPM version](https://img.shields.io/npm/v/sort-json-array.svg?style=flat)](https://www.npmjs.com/package/sort-json-array)
 
 >  Sort an array of JSON objects by a property
 
