@@ -2,6 +2,8 @@
 
 >  Sort an array of JSON objects by a property
 
+[![NPM](https://nodei.co/npm/sort-json-array.svg?downloads=true&stars=true)](https://www.npmjs.com/package/sort-json-array/)
+
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
