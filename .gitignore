@@ -1,0 +1,5 @@
+# Dependency directories
+node_modules
+
+# Custom attributes 
+.DS_Store
