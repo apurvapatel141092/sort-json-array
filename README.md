@@ -37,7 +37,7 @@ sortJsonArray(array, property, order);
 
 * `array`: **{Array}** The array to be sorted.
 * `property`: **{String}**: The Property based on what the array should be sorted.
-* `order`: **{String}**: Pass 'des' if you want array to be sorted in descending order. Pass 'asc' if you want array to be sorted in descending order. By default it will be sorted in ascending order.
+* `order`: **{String}**: Pass 'des' if you want array to be sorted in descending order. Pass 'asc' if you want array to be sorted in ascending order. By default it will be sorted in ascending order.
 
 ## Examples
 
