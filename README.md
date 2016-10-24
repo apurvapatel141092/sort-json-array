@@ -42,10 +42,10 @@ var user = [
 ];
 
 // sort by `name`
-console.log(arraySort(user, 'name'));
+console.log(sortJsonArray(user, 'name'));
 
 // sort by `location`
-console.log(arraySort(user, 'location'));
+console.log(sortJsonArray(user, 'location'));
 ```
 
 ## Running tests
