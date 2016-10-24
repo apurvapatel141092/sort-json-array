@@ -48,6 +48,14 @@ console.log(arraySort(user, 'name'));
 console.log(arraySort(user, 'location'));
 ```
 
+## Running tests
+
+Install dev dependencies and run test:
+
+```sh
+$ npm install -d && npm test
+```
+
 ## Author
 
 **Apurva Patel**

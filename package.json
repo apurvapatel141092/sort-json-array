@@ -10,6 +10,13 @@
     "url": "https://github.com/apurvapatel141092/sort-json-array/issues"
   },
   "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "should": "^8.3.1"
+  },
   "author": "Apurva Patel",
   "keywords": [
     "array",
