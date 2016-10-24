@@ -14,6 +14,18 @@ describe('error', function() {
       sortJsonArray("");
     }).should.throw('sort-json-array expects an array.');
   });
+
+  it('Error should be thrown because an incorrect argument is passed', function() {
+    (function() {
+      var arr = [{key: 'e'}, {key: 'a'}, {key: 'f'}];
+      sortJsonArray(arr, 'key','xyz').should.eql([
+        {key: 'a'},
+        {key: 'e'},
+        {key: 'f'}
+      ])
+    }).should.throw('Wrong argument.');
+  });
+
 });
 
 describe('empty array', function() {
@@ -25,12 +37,31 @@ describe('empty array', function() {
 });
 
 describe('sortJsonArray', function() {
-  it('Array should be sorted by a proprty', function() {
+  it('Array should be sorted by a proprty in ascending order', function() {
     var arr = [{key: 'e'}, {key: 'a'}, {key: 'f'}];
     sortJsonArray(arr, 'key').should.eql([
       {key: 'a'},
       {key: 'e'},
       {key: 'f'}
     ])
-  })
+  });
+
+  it('Array should be sorted by a proprty in ascending order', function() {
+    var arr = [{key: 'e'}, {key: 'a'}, {key: 'f'}];
+    sortJsonArray(arr, 'key','asc').should.eql([
+      {key: 'a'},
+      {key: 'e'},
+      {key: 'f'}
+    ])
+  });
+
+  it('Array should be sorted by a proprty in descending order', function() {
+    var arr = [{key: 'e'}, {key: 'a'}, {key: 'f'}];
+    sortJsonArray(arr, 'key','des').should.eql([
+      {key: 'f'},
+      {key: 'e'},
+      {key: 'a'}
+    ])
+  });
+
 });

@@ -1,10 +1,11 @@
 /**
- ** Sort an array of JSON by a property.
- * @param  {Array} `arr` The Array to be sorted.
- * @param  {String} `prop` The Property based on what the array should be sorted.
- * @return {Array} Returns a sorted array.
- */
-function sortjsonarray(arr,pops){
+** Sort an array of JSON by a property.
+* @param  {Array} `arr` The Array to be sorted.
+* @param  {String} `prop` The Property based on what the array should be sorted.
+* @param  {String} `order` The Property based on what the array should be sorted.
+* @return {Array} Returns a sorted array.
+*/
+function sortjsonarray(arr,pops,order){
 
   if (arr == null) {
     return [];
@@ -18,17 +19,28 @@ function sortjsonarray(arr,pops){
     return arr.sort();
   }
 
-  return arr.sort(compare(pops));
+  if (arguments[2] == null || arguments[2] == "asc" ){
+    return arr.sort(compare(pops,1));
+  }
+  else if (arguments[2] == "des"){
+    return arr.sort(compare(pops,0));
+  }
+  else {
+    throw new TypeError('Wrong argument.');
+  }
+
 };
 
-function compare(attr){
-  return function(a,b){
-    if( a[attr] > b[attr]){
-      return 1;
-    }else if( a[attr] < b[attr] ){
-      return -1;
+function compare(attr,value){
+  if(value){
+    return function(a,b){
+      return a[attr] < b[attr] ? -1 :(a[attr] > b[attr] ? 1 : 0)
     }
-    return 0;
+  }
+  else {
+    return function(a,b){
+      return a[attr] < b[attr] ? 1 :(a[attr] > b[attr] ? -1 : 0)
+    }
   }
 }
 

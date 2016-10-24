@@ -21,16 +21,23 @@ var sortJsonArray = require('sort-json-array');
 
 sortJsonArray([{name: 'c'}, {name: 'a'}, {name: 'b'}], 'name');
 //=> [{name: 'a'}, {name: 'b'}, {name: 'c'}]
+
+sortJsonArray([{name: 'c'}, {name: 'a'}, {name: 'b'}], 'name','des');
+//=> [{name: 'c'}, {name: 'b'}, {name: 'a'}]
+
+sortJsonArray([{name: 'c'}, {name: 'a'}, {name: 'b'}], 'name','asc');
+//=> [{name: 'a'}, {name: 'b'}, {name: 'c'}]
 ```
 
 ## Params
 
 ```js
-sortJsonArray(array, property);
+sortJsonArray(array, property, order);
 ```
 
 * `array`: **{Array}** The array to be sorted.
 * `property`: **{String}**: The Property based on what the array should be sorted.
+* `order`: **{String}**: Pass 'des' if you want array to be sorted in descending order. Pass 'asc' if you want array to be sorted in descending order. By default it will be sorted in ascending order.
 
 ## Examples
 
@@ -43,11 +50,14 @@ var user = [
   { name: 'b', location: "New York" },
 ];
 
-// sort by `name`
+// sort by `name` in ascending order because order is not passed
 console.log(sortJsonArray(user, 'name'));
 
-// sort by `location`
-console.log(sortJsonArray(user, 'location'));
+// sort by `location` in descending order
+console.log(sortJsonArray(user, 'location','des'));
+
+// sort by `name` in ascending order
+console.log(sortJsonArray(user, 'name','asc'));
 ```
 
 ## Running tests
