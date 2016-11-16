@@ -64,4 +64,13 @@ describe('sortJsonArray', function() {
     ])
   });
 
+  it('Array should be sorted by a proprty in ascending order even if there are null values', function() {
+    var arr = [{key: null}, {key: 'x'}, {key: 'a'}];
+    sortJsonArray(arr, 'key','asc').should.eql([
+      {key: null},
+      {key: 'a'},
+      {key: 'x'}
+    ])
+  });
+
 });

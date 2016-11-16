@@ -5,7 +5,7 @@
 * @param  {String} `order` The Property based on what the array should be sorted.
 * @return {Array} Returns a sorted array.
 */
-function sortjsonarray(arr,pops,order){
+function sortjsonarray(arr,prop,order){
 
   if (arr == null) {
     return [];
@@ -20,10 +20,10 @@ function sortjsonarray(arr,pops,order){
   }
 
   if (arguments[2] == null || arguments[2] == "asc" ){
-    return arr.sort(compare(pops,1));
+    return arr.sort(compare(prop,1));
   }
   else if (arguments[2] == "des"){
-    return arr.sort(compare(pops,0));
+    return arr.sort(compare(prop,0));
   }
   else {
     throw new TypeError('Wrong argument.');
@@ -34,12 +34,16 @@ function sortjsonarray(arr,pops,order){
 function compare(attr,value){
   if(value){
     return function(a,b){
-      return a[attr] < b[attr] ? -1 :(a[attr] > b[attr] ? 1 : 0)
+      var x = (a[attr] === null) ? "" : "" + a[attr],
+      y = (b[attr] === null) ? "" : "" + b[attr];
+      return x < y ? -1 :(x > y ? 1 : 0)
     }
   }
   else {
     return function(a,b){
-      return a[attr] < b[attr] ? 1 :(a[attr] > b[attr] ? -1 : 0)
+      var x = (a[attr] === null) ? "" : "" + a[attr],
+      y = (b[attr] === null) ? "" : "" + b[attr];
+      return x < y ? 1 :(x > y ? -1 : 0)
     }
   }
 }
