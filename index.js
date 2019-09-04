@@ -5,7 +5,7 @@
 * @param  {String} `order` The Property based on what the array should be sorted.
 * @return {Array} Returns a sorted array.
 */
-function sortjsonarray(arr,prop,order){
+function sortjsonarray(arr, prop, order) {
 
   if (arr == null) {
     return [];
@@ -19,11 +19,11 @@ function sortjsonarray(arr,prop,order){
     return arr.sort();
   }
 
-  if (arguments[2] == null || arguments[2] == "asc" ){
-    return arr.sort(compare(prop,1));
+  if (arguments[2] == null || arguments[2] == "asc") {
+    return arr.sort(compare(prop, 1));
   }
-  else if (arguments[2] == "des"){
-    return arr.sort(compare(prop,0));
+  else if (arguments[2] == "des") {
+    return arr.sort(compare(prop, 0));
   }
   else {
     throw new TypeError('Wrong argument.');
@@ -31,21 +31,36 @@ function sortjsonarray(arr,prop,order){
 
 };
 
-function compare(attr,value){
-  if(value){
-    return function(a,b){
-      var x = (a[attr] === null) ? "" : "" + a[attr],
-      y = (b[attr] === null) ? "" : "" + b[attr];
-      return x < y ? -1 :(x > y ? 1 : 0)
+function compare(attr, value) {
+  if (value) {
+    return function (a, b) {
+      var x = (Object.byString(a, attr) === null) ? "" : "" + Object.byString(a, attr),
+        y = (Object.byString(b, attr) === null) ? "" : "" + Object.byString(b, attr);
+      return x < y ? -1 : (x > y ? 1 : 0)
     }
   }
   else {
-    return function(a,b){
-      var x = (a[attr] === null) ? "" : "" + a[attr],
-      y = (b[attr] === null) ? "" : "" + b[attr];
-      return x < y ? 1 :(x > y ? -1 : 0)
+    return function (a, b) {
+      var x = (Object.byString(a, attr) === null) ? "" : "" + Object.byString(a, attr),
+        y = (Object.byString(b, attr) === null) ? "" : "" + Object.byString(b, attr);
+      return x < y ? 1 : (x > y ? -1 : 0)
     }
   }
+}
+
+Object.byString = function (arr, attr) {
+  attr = attr.replace(/\[(\w+)\]/g, '.$1');
+  attr = attr.replace(/^\./, '');
+  var splittedAttr = attr.split('.');
+  for (var i = 0, n = splittedAttr.length; i < n; ++i) {
+    var k = splittedAttr[i];
+    if (k in arr) {
+      arr = arr[k];
+    } else {
+      return;
+    }
+  }
+  return arr;
 }
 
 module.exports = sortjsonarray; // let me be required
