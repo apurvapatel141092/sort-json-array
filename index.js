@@ -48,19 +48,19 @@ function compare(attr, value) {
   }
 }
 
-Object.byString = function (o, s) {
-  s = s.replace(/\[(\w+)\]/g, '.$1');
-  s = s.replace(/^\./, '');
-  var a = s.split('.');
-  for (var i = 0, n = a.length; i < n; ++i) {
-    var k = a[i];
-    if (k in o) {
-      o = o[k];
+Object.byString = function (arr, attr) {
+  attr = attr.replace(/\[(\w+)\]/g, '.$1');
+  attr = attr.replace(/^\./, '');
+  var splittedAttr = attr.split('.');
+  for (var i = 0, n = splittedAttr.length; i < n; ++i) {
+    var k = splittedAttr[i];
+    if (k in arr) {
+      arr = arr[k];
     } else {
       return;
     }
   }
-  return o;
+  return arr;
 }
 
 module.exports = sortjsonarray; // let me be required
